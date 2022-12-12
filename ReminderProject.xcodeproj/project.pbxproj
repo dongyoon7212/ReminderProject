@@ -15,6 +15,8 @@
 		833DFCA7294798B800DFBB47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833DFCA6294798B800DFBB47 /* Assets.xcassets */; };
 		833DFCAA294798B800DFBB47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833DFCA8294798B800DFBB47 /* LaunchScreen.storyboard */; };
 		833DFCB22947A85B00DFBB47 /* collectionCellDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DFCB12947A85B00DFBB47 /* collectionCellDummy.swift */; };
+		833DFCB72947AA8200DFBB47 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DFCB52947AA8200DFBB47 /* CollectionViewCell.swift */; };
+		833DFCB82947AA8200DFBB47 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833DFCB62947AA8200DFBB47 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		833DFCA9294798B800DFBB47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		833DFCAB294798B800DFBB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833DFCB12947A85B00DFBB47 /* collectionCellDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionCellDummy.swift; sourceTree = "<group>"; };
+		833DFCB52947AA8200DFBB47 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = ../CollectionViewCell.swift; sourceTree = "<group>"; };
+		833DFCB62947AA8200DFBB47 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				833DFC9E294798B700DFBB47 /* ViewController.swift */,
 				833DFCA0294798B700DFBB47 /* Main.storyboard */,
 				833DFCB12947A85B00DFBB47 /* collectionCellDummy.swift */,
+				833DFCB52947AA8200DFBB47 /* CollectionViewCell.swift */,
+				833DFCB62947AA8200DFBB47 /* CollectionViewCell.xib */,
 				833DFCA6294798B800DFBB47 /* Assets.xcassets */,
 				833DFCA8294798B800DFBB47 /* LaunchScreen.storyboard */,
 				833DFCAB294798B800DFBB47 /* Info.plist */,
@@ -133,6 +139,7 @@
 			files = (
 				833DFCAA294798B800DFBB47 /* LaunchScreen.storyboard in Resources */,
 				833DFCA7294798B800DFBB47 /* Assets.xcassets in Resources */,
+				833DFCB82947AA8200DFBB47 /* CollectionViewCell.xib in Resources */,
 				833DFCA2294798B700DFBB47 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +153,7 @@
 			files = (
 				833DFC9F294798B700DFBB47 /* ViewController.swift in Sources */,
 				833DFCA5294798B700DFBB47 /* ReminderProject.xcdatamodeld in Sources */,
+				833DFCB72947AA8200DFBB47 /* CollectionViewCell.swift in Sources */,
 				833DFC9B294798B700DFBB47 /* AppDelegate.swift in Sources */,
 				833DFC9D294798B700DFBB47 /* SceneDelegate.swift in Sources */,
 				833DFCB22947A85B00DFBB47 /* collectionCellDummy.swift in Sources */,
