@@ -7,13 +7,17 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class collectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var cellcount: UILabel!
-    @IBOutlet weak var cellName: UILabel!
+    @IBOutlet weak var cellToday: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+
+        
+
         
         // Initialization code
     }
