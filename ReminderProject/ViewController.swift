@@ -62,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.tableCellImage?.tintColor = imgColor
         cell.tableCellCount?.text = target.count
         cell.tableCellName?.text = target.title
-        
+                
         return cell
     }
     
@@ -82,6 +82,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 170, height: 80)
         collectionView.collectionViewLayout = layout
