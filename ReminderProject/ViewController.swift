@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     @IBOutlet weak var myList: UILabel!
     @IBOutlet weak var newList: UIButton!
@@ -20,6 +22,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let collectionCellCount = collectionCell.data
     let cellName = "collectionViewCell"
     let cellReuseIdentifier = "collectionCellIdentifier"
+    let tableCellName = "TableViewCell"
+    let tableCellCount = tableCell.data
+    let tableCellReuseIdentifier = "tableCellIdentifier"
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionCellCount.count
@@ -32,6 +37,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let target = collectionCellCount[indexPath.row]
         
         let img = UIImage(systemName: "\(target.image)")
+        let imgColor = UIColor(named: "\(target.color)")
+        cell.cellImage?.tintColor = imgColor
         cell.cellImage?.image = img
         cell.cellcount?.text = target.count
         cell.cellToday?.text = target.title
@@ -39,10 +46,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableCellCount.count
+    }
     
-    
-
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableCellReuseIdentifier, for: indexPath) as? TableViewCell else {
+            return UITableViewCell()
+        }
+        let target = tableCellCount[indexPath.row]
+        
+        let img = UIImage(systemName: "\(target.image)")
+        let imgColor = UIColor(named: "\(target.color)")
+        cell.tableCellImage?.image = img
+        cell.tableCellImage?.tintColor = imgColor
+        cell.tableCellCount?.text = target.count
+        cell.tableCellName?.text = target.title
+        
+        return cell
+    }
     
 
     
@@ -52,9 +74,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         registerXib()
+        registerTableXib()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 170, height: 80)
+        collectionView.collectionViewLayout = layout
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
 
         }
@@ -62,7 +93,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let nibName = UINib(nibName: cellName, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: cellReuseIdentifier)
     }
-
-
+    
+    private func registerTableXib() {
+        let nibName = UINib(nibName: tableCellName, bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: tableCellReuseIdentifier)
+    }
 }
+
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt IndexPath: IndexPath) -> CGSize {
+        return CGSize(width: 170, height: 80)
+    }
+}
+
+
 

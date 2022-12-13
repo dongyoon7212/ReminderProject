@@ -15,6 +15,10 @@ class collectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 10
+        
+        
 
         
 
