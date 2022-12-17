@@ -31,9 +31,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? collectionViewCell else {
             return UICollectionViewCell()
-            }
+        }
         let target = collectionCellCount[indexPath.row]
         
         let img = UIImage(systemName: "\(target.image)")
@@ -62,16 +63,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.tableCellImage?.tintColor = imgColor
         cell.tableCellCount?.text = target.count
         cell.tableCellName?.text = target.title
-                
+        
+        
         return cell
     }
     
-
     
-
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setPopUpButton()
         
         registerXib()
         registerTableXib()
@@ -88,8 +92,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.collectionViewLayout = layout
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
-
-        }
+        
+    }
     private func registerXib() {
         let nibName = UINib(nibName: cellName, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: cellReuseIdentifier)
@@ -99,6 +103,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let nibName = UINib(nibName: tableCellName, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: tableCellReuseIdentifier)
     }
+    
+
+    
+    func setPopUpButton(){
+        
+        let optionClosure = {(action : UIAction) in
+            print(action.title)}
+            
+            self.option.menu = UIMenu(children : [
+            UIAction(title: "목록 편집", handler: optionClosure),
+            UIAction(title: "템플릿", handler: optionClosure)])
+            
+            self.option.showsMenuAsPrimaryAction = true
+    }
+    
+    
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout{
@@ -107,6 +129,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         return CGSize(width: 170, height: 80)
     }
 }
+
 
 
 
