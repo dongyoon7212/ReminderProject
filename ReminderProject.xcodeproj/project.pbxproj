@@ -20,6 +20,7 @@
 		833DFCBD2948803200DFBB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DFCBB2948803200DFBB47 /* TableViewCell.swift */; };
 		833DFCBE2948803200DFBB47 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833DFCBC2948803200DFBB47 /* TableViewCell.xib */; };
 		833DFCC02948805500DFBB47 /* TableCellDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833DFCBF2948805500DFBB47 /* TableCellDummy.swift */; };
+		83FD92A82959BFCA0090717E /* newListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD92A72959BFCA0090717E /* newListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		833DFCBB2948803200DFBB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		833DFCBC2948803200DFBB47 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		833DFCBF2948805500DFBB47 /* TableCellDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellDummy.swift; sourceTree = "<group>"; };
+		83FD92A72959BFCA0090717E /* newListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				833DFC9A294798B700DFBB47 /* AppDelegate.swift */,
 				833DFC9C294798B700DFBB47 /* SceneDelegate.swift */,
 				833DFC9E294798B700DFBB47 /* ViewController.swift */,
+				83FD92A72959BFCA0090717E /* newListViewController.swift */,
 				833DFCA0294798B700DFBB47 /* Main.storyboard */,
 				833DFCB12947A85B00DFBB47 /* collectionCellDummy.swift */,
 				833DFCB52947AA8200DFBB47 /* collectionViewCell.swift */,
@@ -169,6 +172,7 @@
 				833DFC9D294798B700DFBB47 /* SceneDelegate.swift in Sources */,
 				833DFCBD2948803200DFBB47 /* TableViewCell.swift in Sources */,
 				833DFCB22947A85B00DFBB47 /* collectionCellDummy.swift in Sources */,
+				83FD92A82959BFCA0090717E /* newListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

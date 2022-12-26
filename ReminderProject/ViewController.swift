@@ -11,13 +11,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
+    @IBAction func newList(_ sender: Any) {
+        guard let newListVC = self.storyboard?.instantiateViewController(withIdentifier: "newListViewController") else { return }
+        self.present(newListVC, animated: true)
+    }
     @IBOutlet weak var myList: UILabel!
-    @IBOutlet weak var newList: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addList: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var option: UIButton!
+    
     
     let collectionCellCount = collectionCell.data
     let cellName = "collectionViewCell"
@@ -25,6 +29,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let tableCellName = "TableViewCell"
     let tableCellCount = tableCell.data
     let tableCellReuseIdentifier = "tableCellIdentifier"
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         collectionCellCount.count
@@ -104,18 +109,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         tableView.register(nibName, forCellReuseIdentifier: tableCellReuseIdentifier)
     }
     
-
+    
     
     func setPopUpButton(){
         
         let optionClosure = {(action : UIAction) in
             print(action.title)}
-            
-            self.option.menu = UIMenu(children : [
+        
+        self.option.menu = UIMenu(children : [
             UIAction(title: "목록 편집", handler: optionClosure),
             UIAction(title: "템플릿", handler: optionClosure)])
-            
-            self.option.showsMenuAsPrimaryAction = true
+        
+        self.option.showsMenuAsPrimaryAction = true
     }
     
     
